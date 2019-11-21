@@ -6,16 +6,18 @@ import PropTypes from "prop-types";
 import Nav from "./Nav";
 import Container from "./Container";
 
-/** A simple header component which contains the navigation, a background image, section for header text */
-const Header = ({
-  title,
-  subTitle,
-  navBackground,
-  image,
-  category,
-  includeCTA,
-  navtop
-}) => {
+/** A simple header component which contains the navigation, a background image if required, section for header text */
+const Header = props => {
+  const {
+    title,
+    subTitle,
+    navBackground,
+    image,
+    category,
+    includeCTA,
+    navtop,
+    defaultImage
+  } = props;
   const data = useStaticQuery(graphql`
     query imgQuery {
       file(relativePath: { eq: "headerImageDefault.jpg" }) {
@@ -33,19 +35,21 @@ const Header = ({
   return (
     <>
       {!navtop && <Nav bg="primary" p={0} />}
-      <Box as="header" bg="primary" sx={{ position: "relative" }}>
-        <Img
-          fluid={image.fluid || data.file.childImageSharp.fluid}
-          alt={image.alt || title}
-          style={{
-            position: "absolute",
-            left: 0,
-            top: 0,
-            width: "100%",
-            height: "100%",
-            overflow: "hidden"
-          }}
-        />
+      <Box as="header" variant="header" sx={{ position: "relative" }}>
+        {defaultImage && (
+          <Img
+            fluid={image.fluid || data.file.childImageSharp.fluid}
+            alt={image.alt || title}
+            style={{
+              position: "absolute",
+              left: 0,
+              top: 0,
+              width: "100%",
+              height: "100%",
+              overflow: "hidden"
+            }}
+          />
+        )}
         {navtop && <Nav bg={navBackground} />}
         <Container>
           <Box
@@ -56,7 +60,7 @@ const Header = ({
             minHeight={[0, 300]}
             width={[1, 1 / 2]}
           >
-            <Text color="primary" fontFamily="subheading" mb="2" fontSize={[4]}>
+            <Text fontFamily="subheading" mb="2" fontSize={[4]}>
               {category}
             </Text>
             <Heading as="h1" fontSize={[6, 6, 7]} mb="1.4rem">
