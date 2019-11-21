@@ -22,7 +22,6 @@ const BlogIndex = ({ data }) => {
                 width={300}
                 slug={`/blog/${node.slug}`}
                 title={node.title}
-                subTitle={node.subtitle}
                 category={node.category.title}
                 image={image}
               />
@@ -42,7 +41,7 @@ export const query = graphql`
       edges {
         node {
           title
-          subtitle
+
           category {
             title
           }

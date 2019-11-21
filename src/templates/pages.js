@@ -8,7 +8,6 @@ import Header from "../components/ui/Header";
 import Section from "../components/ui/Section";
 
 import Container from "../components/ui/Container";
-import LeadForm from "../components/ui/LeadForm";
 
 // Template for producing all the pages in the datoCMS page model
 const LoanPagesTemplate = ({ data, location }) => {

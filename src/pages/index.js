@@ -1,13 +1,11 @@
 import React from "react";
 import Layout from "../components/ui/Layout";
 import Header from "../components/ui/Header";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import Section from "../components/ui/Section";
 import Container from "../components/ui/Container";
-import { Box, Button } from "rebass/styled-components";
-import ArticleCard from "../components/ui/ArticleCard";
-import { Text, Heading } from "rebass/styled-components";
-import CaseStudyList from "../components/ui/CaseStudyList";
+
+// import CaseStudyList from "../components/ui/CaseStudyList";
 
 export default ({ data, pageContext }) => {
   const { title, subtitle } = data.datoCmsHomePage;
@@ -19,15 +17,23 @@ export default ({ data, pageContext }) => {
 
       <Section bg="lightGrey" py={4}>
         <Container>
-        <p>The Glenvar Bale Direct System (BDS) is a bolt-on kit that creates an interface between a combine harvester and a baler, enabling broadacre farmers to carry out the harvesting and baling processes in a single operation, without the residue coming into contact with the ground.
-Broadacre farmers using BDS can:</p>
-<ul>
-
-  <li>Save time, fuel and labour by running the harvesting and baling operations simultaneously</li>
-  <li>Produce clean, uncontaminated bales as a marketable product</li>
-  <li>Capture 98% of all weed seeds in the bale Reduce baler maintenance</li>
-</ul>
-
+          <p>
+            The Glenvar Bale Direct System (BDS) is a bolt-on kit that creates
+            an interface between a combine harvester and a baler, enabling
+            broadacre farmers to carry out the harvesting and baling processes
+            in a single operation, without the residue coming into contact with
+            the ground. Broadacre farmers using BDS can:
+          </p>
+          <ul>
+            <li>
+              Save time, fuel and labour by running the harvesting and baling
+              operations simultaneously
+            </li>
+            <li>Produce clean, uncontaminated bales as a marketable product</li>
+            <li>
+              Capture 98% of all weed seeds in the bale Reduce baler maintenance
+            </li>
+          </ul>
         </Container>
         {/* <Container p={3}> */}
         {/* <Box width={1}>
@@ -67,7 +73,7 @@ Broadacre farmers using BDS can:</p>
           </Link>
         </Box> */}
       </Section>
-      <CaseStudyList />
+      {/* <CaseStudyList /> */}
     </Layout>
   );
 };
@@ -76,14 +82,13 @@ export const query = graphql`
   query IndexQuery {
     datoCmsHomePage {
       title
-      subtitle
     }
 
     allDatoCmsBlog(limit: 3) {
       edges {
         node {
           title
-          subtitle
+          # subtitle
           category {
             title
           }

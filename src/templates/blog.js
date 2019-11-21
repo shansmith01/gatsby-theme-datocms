@@ -16,7 +16,7 @@ const BlogPagesTemplate = ({ data }) => {
     title,
     body,
     headerImage,
-    subtitle,
+
     category
   } = data.datoCmsBlog;
   const image = headerImage || {};
@@ -26,7 +26,7 @@ const BlogPagesTemplate = ({ data }) => {
       <Header
         title={title}
         image={image}
-        subTitle={subtitle}
+        // subTitle={subtitle}
         category={category.title}
       />
       <Section>
@@ -50,7 +50,7 @@ export const query = graphql`
     datoCmsBlog(slug: { eq: $slug }) {
       title
       body
-      subtitle
+
       category {
         title
       }

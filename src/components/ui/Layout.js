@@ -18,16 +18,7 @@ const Layout = ({ children, hideFooter }) => {
         <>
           <Seo />
 
-          <Box
-            as="main"
-            sx={{
-              borderTopWidth: "4px",
-              borderTopStyle: "default",
-              borderTopColor: "primary"
-            }}
-          >
-            {children}
-          </Box>
+          <Box as="main">{children}</Box>
           {!hideFooter && <Footer />}
         </>
       </>

@@ -6,7 +6,7 @@ import { Card, Heading, Text, Box } from "rebass/styled-components";
 
 /** A component for showing article cards- This can be used in blogs and category index pages/ It has a default image if no image is specified */
 const ArticleCard = props => {
-  const { slug, title, image, subTitle, category, test } = props;
+  const { slug, title, image, subTitle, category } = props;
   const data = useStaticQuery(graphql`
     query ArticleCardQuery {
       file(relativePath: { eq: "headerImageDefault.jpg" }) {

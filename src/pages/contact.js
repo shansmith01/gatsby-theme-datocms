@@ -8,15 +8,14 @@ import ContactForm from "../components/ui/ContactForm";
 import Container from "../components/ui/Container";
 
 const ContactPage = ({ location, pageContext }) => {
-  console.log(pageContext);
-  const iframe =
-    '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5995.396315105678!2d174.7801582148391!3d-41.29367329046091!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa6be67dc3d9f1ef2!2sCentury%2021%20First%20Choice%20Realty!5e0!3m2!1sen!2snz!4v1568343224067!5m2!1sen!2snz" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>';
+  // const iframe =
+  //   '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5995.396315105678!2d174.7801582148391!3d-41.29367329046091!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa6be67dc3d9f1ef2!2sCentury%2021%20First%20Choice%20Realty!5e0!3m2!1sen!2snz!4v1568343224067!5m2!1sen!2snz" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>';
 
-  const iframeHHTML = () => {
-    return {
-      __html: iframe
-    };
-  };
+  // const iframeHHTML = () => {
+  //   return {
+  //     __html: iframe
+  //   };
+  // };
 
   return (
     <Layout>
@@ -27,11 +26,8 @@ const ContactPage = ({ location, pageContext }) => {
             <Heading as="h2" fontSize={[5, 6]} fontWeight="500" mb={3}>
               We are always here to help
             </Heading>
-            <>
-              Contact us by filling out the form or using the details below:
-            </>
+            <>Contact us by filling out the form or using the details below:</>
             <div itemscope itemtype="http://schema.org/LocalBusiness">
-              
               <strong>E:</strong>gshields_glenvar@bigpond.com <br />
               <br />
               <strong>P:</strong>
