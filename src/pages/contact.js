@@ -27,9 +27,9 @@ const ContactPage = ({ location, pageContext }) => {
             <Heading as="h2" fontSize={[5, 6]} fontWeight="500" mb={3}>
               We are always here to help
             </Heading>
-            <p>
+            <>
               Contact us by filling out the form or using the details below:
-            </p>
+            </>
             <div itemscope itemtype="http://schema.org/LocalBusiness">
               
               <strong>E:</strong>gshields_glenvar@bigpond.com <br />

@@ -22,11 +22,12 @@ const GlobalStyle = createGlobalStyle`
 
 p {line-height:1.5;}
 
-a {color: ${props =>
-  props.theme.colors.link} text-decoration: props.theme.colors.link }
+a {
+  color: ${props => props.theme.colors.link}; 
+  text-decoration: props.theme.colors.link };
 
 h1, h2, h3 {
-  font-family: 'Typold Bold'
+  font-family: 'Typold Bold';
 }
 
 
@@ -41,6 +42,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: ${props => props.theme.baseFontSize};
 }
 article,
 aside,

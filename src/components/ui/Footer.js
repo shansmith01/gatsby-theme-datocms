@@ -10,9 +10,6 @@ const MenuList = styled.ul`
   margin: 1rem 0;
   padding: 0;
   list-style-type: none;
-  a {
-    color: ${props => props.theme.colors.white};
-  }
 `;
 
 const Footer = () => {
@@ -38,10 +35,10 @@ const Footer = () => {
   var year = date.getFullYear();
 
   return (
-    <Section as="footer" bg="footer" color="white">
+    <Section as="footer" variant="footer">
       <Container>
         <Box width={[1 / 2, 1 / 4]} p={3}>
-          <Heading as="h3">Quick links</Heading>
+          <Heading as="h4">Quick links</Heading>
           <Text fontSize={[2, 2, 3]} color="primary">
             <MenuList>
               <li>
@@ -52,7 +49,20 @@ const Footer = () => {
         </Box>
 
         <Box width={[1 / 2, 1 / 4]} p={3}>
-          <Heading as="h3">About</Heading>
+          <Heading as="h4">Contact us</Heading>
+          <Text fontSize={[2, 2, 3]} color="primary">
+            <MenuList>
+              <li>US: 404 889 5963</li>
+              <li>AU: 1800 843 776</li>
+              <li>AU: 1800 843 776</li>
+              <li>UK: +44 20 7193 9657</li>
+              <li>SWE: +46 7217 50659</li>
+            </MenuList>
+          </Text>
+        </Box>
+
+        <Box width={[1 / 2, 1 / 4]} p={3}>
+          <Heading as="h4">About</Heading>
           <Text fontSize={[2, 2, 3]} color="primary">
             <MenuList>
               <li>

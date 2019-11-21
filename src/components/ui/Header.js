@@ -56,21 +56,10 @@ const Header = ({
             minHeight={[0, 300]}
             width={[1, 1 / 2]}
           >
-            <Text
-              color="primary"
-              fontFamily="subheading"
-              mb="2"
-              fontSize={[4]}
-              sx={{ textTransform: "uppercase" }}
-            >
+            <Text color="primary" fontFamily="subheading" mb="2" fontSize={[4]}>
               {category}
             </Text>
-            <Heading
-              as="h1"
-              fontSize={[6, 6, 7]}
-              mb="1.4rem"
-              sx={{ textTransform: "uppercase" }}
-            >
+            <Heading as="h1" fontSize={[6, 6, 7]} mb="1.4rem">
               {title}
             </Heading>
             <Text as="p" fontSize={[4, 4, 5]}>

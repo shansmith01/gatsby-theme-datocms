@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import styled from "styled-components";
-import { space, layout } from "styled-system";
+import { space, layout, variant } from "styled-system";
 import { useSpring, animated } from "react-spring";
 import { Link } from "gatsby";
 import { Flex } from "rebass/styled-components";
@@ -19,9 +19,9 @@ const MenuItems = styled.ul`
 
 const MenuItem = styled.li`
   padding: 0 0.5rem;
-  a {
+  /* a {
     color: ${props => props.theme.colors.navLink};
-  }
+  } */
   ${layout}
 `;
 
@@ -95,10 +95,9 @@ const Nav = ({ bg }) => {
       )}
       <Flex
         as="nav"
+        variant="nav"
         px={2}
         py={3}
-        color="white"
-        bg={bg}
         sx={{ position: "relative" }}
         alignItems="center"
         flexWrap="wrap"
