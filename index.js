@@ -6,3 +6,4 @@ export { default as Container } from "./src/components/ui/Container";
 export { default as Section } from "./src/components/ui/Section";
 export { default as CloseButton } from "./src/components/ui/CloseButton";
 export { default as Header } from "./src/components/ui/Header";
+export { default as Avatar } from "./src/components/ui/Avatar";
