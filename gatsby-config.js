@@ -15,20 +15,25 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 const path = require("path");
 
 module.exports = themeOptions => {
-  const { siteUrl, title, description, author } = themeOptions.siteMetadata;
+  const {
+    siteUrl,
+    title,
+    description,
+    author,
+    image
+  } = themeOptions.siteMetadata;
   const datacms = themeOptions.datocms || {};
 
   datacms.apiToken = datacms.apiToken || "";
   datacms.previewMode = datacms.previewMode || false;
-
-  console.log(title);
 
   return {
     siteMetadata: {
       siteUrl: siteUrl || "",
       title: title || "",
       description: description || "",
-      author: author || ""
+      author: author || "",
+      image: image || ""
     },
     plugins: [
       "gatsby-transformer-react-docgen",
@@ -129,6 +134,16 @@ module.exports = themeOptions => {
           path: path.join(__dirname, "src", "pages")
         }
       },
+      {
+        resolve: "gatsby-plugin-page-creator",
+        options: {
+          path: path.join(__dirname, "src", "docs")
+          // process.env.NODE_ENV === `development`
+          //   ? path.join(__dirname, "src", "docs")
+          //   : ""
+        }
+      },
+
       {
         resolve: "gatsby-plugin-compile-es6-packages",
         options: {

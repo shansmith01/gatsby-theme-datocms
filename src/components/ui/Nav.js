@@ -65,7 +65,6 @@ const Nav = ({ bg }) => {
     </MenuItem>
   ));
 
-  console.log(dynamicMenuLinks);
   const MobMenu = ({ style, toggle }) => (
     <animated.div style={{ position: "relative", zIndex: 1, ...style }}>
       <MobNav>

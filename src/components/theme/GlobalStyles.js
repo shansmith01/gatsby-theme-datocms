@@ -3,7 +3,6 @@ import { TypoldBold, OakesRegular } from "./fonts/fonts";
 /**
  * A global Style sheet. Use Sparingly
  */
-console.log(TypoldBold);
 const GlobalStyle = createGlobalStyle`
 
 @font-face {

@@ -8,7 +8,6 @@ import Footer from "./Footer";
 
 // Theme and CSS
 import defaultTheme from "../theme/default";
-import Seo from "../ui/Seo";
 
 const Layout = ({ children, hideFooter }) => {
   return (
@@ -16,8 +15,6 @@ const Layout = ({ children, hideFooter }) => {
       <>
         <GlobalStyle />
         <>
-          <Seo />
-
           <Box as="main">{children}</Box>
           {!hideFooter && <Footer />}
         </>

@@ -3,19 +3,21 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({ description, lang, meta, keywords, title, image, url }) {
   return (
     <StaticQuery
       query={detailsQuery}
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description;
+        const metaTitle = title || data.site.siteMetadata.title;
+        const metaImage = image || data.site.siteMetadata.image;
         return (
           <Helmet
             htmlAttributes={{
               lang
             }}
-            title={title || data.site.siteMetadata.title}
+            title={metaTitle}
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
             meta={[
               {
@@ -24,7 +26,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: `og:title`,
-                content: title
+                content: metaTitle
               },
               {
                 property: `og:description`,
@@ -35,8 +37,24 @@ function SEO({ description, lang, meta, keywords, title }) {
                 content: `website`
               },
               {
+                property: `og:image`,
+                content: metaImage
+              },
+              {
+                property: `og:url`,
+                content: url
+              },
+              {
+                name: `twitter:site`,
+                content: data.site.siteMetadata.title
+              },
+              {
                 name: `twitter:card`,
-                content: `summary`
+                content: `summary_large_image`
+              },
+              {
+                name: `twitter:image`,
+                content: metaImage
               },
               {
                 name: `twitter:creator`,
@@ -44,7 +62,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 name: `twitter:title`,
-                content: title
+                content: metaTitle
               },
               {
                 name: `twitter:description`,
@@ -90,6 +108,7 @@ const detailsQuery = graphql`
         title
         description
         author
+        image
       }
     }
   }

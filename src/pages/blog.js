@@ -8,7 +8,6 @@ import Container from "../components/ui/Container";
 import ArticleCard from "../components/ui/ArticleCard";
 
 const BlogIndex = ({ data }) => {
-  console.log(data);
   return (
     <Layout>
       <Header title="Guides" subTitle="All the blog/guides will show here" />

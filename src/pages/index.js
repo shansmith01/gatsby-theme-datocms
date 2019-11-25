@@ -9,7 +9,6 @@ import Container from "../components/ui/Container";
 
 export default ({ data, pageContext }) => {
   const { title, subtitle } = data.datoCmsHomePage;
-  console.log(pageContext);
 
   return (
     <Layout>
