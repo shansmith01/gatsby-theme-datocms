@@ -134,15 +134,6 @@ module.exports = themeOptions => {
           path: path.join(__dirname, "src", "pages")
         }
       },
-      {
-        resolve: "gatsby-plugin-page-creator",
-        options: {
-          path: path.join(__dirname, "src", "docs")
-          // process.env.NODE_ENV === `development`
-          //   ? path.join(__dirname, "src", "docs")
-          //   : ""
-        }
-      },
 
       {
         resolve: "gatsby-plugin-compile-es6-packages",

@@ -35,7 +35,7 @@ const Input = styled.input`
 `;
 
 Input.defaultProps = {
-  borderWidth: "0px",
+  border: "formInputBorder",
   borderRadius: "default",
   fontSize: 3,
   color: "#495057"
@@ -61,6 +61,24 @@ const Optional = styled.span`
 
 const Select = styled.select`
   display: block;
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  ${color};
+  ${border};
+  ${typography};
+  background-clip: padding-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  height: 2.5rem;
 `;
+
+Select.defaultProps = {
+  border: "formInputBorder",
+  borderRadius: "default",
+  fontSize: 3,
+  color: "#495057"
+};
 
 export { Label, Input, TextArea, Optional, Select };

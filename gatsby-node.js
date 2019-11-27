@@ -35,6 +35,13 @@ exports.createPages = ({ graphql, actions }, themeOptions) => {
             }
           }
         }
+        allDatoCmsBlog {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
         allComponentMetadata {
           edges {
             node {
@@ -53,16 +60,17 @@ exports.createPages = ({ graphql, actions }, themeOptions) => {
           }
         });
       });
-      // result.data.allDatoCmsBlog.edges.map(({ node }) => {
-      //   createPage({
-      //     path: `guide/${node.slug}/`,
-      //     component: require.resolve("./src/templates/blog.js"),
-      //     context: {
-      //       slug: node.slug,
-      //       locale: "en"
-      //     }
-      //   });
-      // });
+      result.data.allDatoCmsBlog.edges.map(({ node }) => {
+        console.log(node.slug);
+        createPage({
+          path: `blog/${node.slug}/`,
+          component: require.resolve("./src/templates/blog.js"),
+          context: {
+            slug: node.slug,
+            locale: "en"
+          }
+        });
+      });
       result.data.allComponentMetadata.edges.map(({ node }) => {
         createPage({
           path: `docs/${node.displayName}/`,
