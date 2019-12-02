@@ -28,14 +28,14 @@ exports.createPages = ({ graphql, actions }, themeOptions) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allDatoCmsPage(sort: { fields: bodyNode___id, order: ASC }) {
+        allDatoCmsPage {
           edges {
             node {
               slug
             }
           }
         }
-        allDatoCmsBlog {
+        allDatoCmsArticle {
           edges {
             node {
               slug
@@ -60,8 +60,7 @@ exports.createPages = ({ graphql, actions }, themeOptions) => {
           }
         });
       });
-      result.data.allDatoCmsBlog.edges.map(({ node }) => {
-        console.log(node.slug);
+      result.data.allDatoCmsArticle.edges.map(({ node }) => {
         createPage({
           path: `blog/${node.slug}/`,
           component: require.resolve("./src/templates/blog.js"),

@@ -14,3 +14,5 @@ export {
   Optional,
   Select
 } from "./src/components/styles/FormStyles";
+export { default as BlogByLine } from "./src/components/ui/BlogByLine";
+export { H1, H2, H3, H4 } from "./src/components/styles/Typography";

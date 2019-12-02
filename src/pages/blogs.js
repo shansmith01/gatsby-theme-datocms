@@ -14,7 +14,7 @@ const BlogIndex = ({ data }) => {
       <Section bg="lightGrey">
         <Container>
           {data.allDatoCmsBlog.edges.map(({ node }) => {
-            const image = node.headerImage || {};
+            const image = node.featuredMedia || {};
 
             return (
               <ArticleCard
@@ -36,17 +36,16 @@ export default BlogIndex;
 
 export const query = graphql`
   query GuideIndexQuery {
-    allDatoCmsBlog {
+    allDatoCmsArticle {
       edges {
         node {
           title
-
-          category {
-            title
+          categories {
+            name
           }
           slug
 
-          headerImage {
+          featuredMedia {
             fluid(
               maxWidth: 600
               maxHeight: 400

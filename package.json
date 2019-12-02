@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-datocms",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "main": "index.js",
   "author": "Shannon Smith - Powerboard Digital Marketing",
   "license": "MIT",
@@ -28,6 +28,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "date-fns": "^2.8.1",
     "dotenv": "^8.1.0",
+    "excerpt-html": "^1.2.1",
     "gatsby": "^2.11.7",
     "gatsby-image": "^2.2.8",
     "gatsby-plugin-compile-es6-packages": "^1.1.0",

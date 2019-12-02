@@ -11,7 +11,7 @@ import Container from "../components/ui/Container";
 
 // Template for producing all the pages in the datoCMS page model
 const LoanPagesTemplate = ({ data, location }) => {
-  const { seoMetaTags, title, body } = data.datoCmsPage;
+  const { seoMetaTags, title, content } = data.datoCmsPage;
   // const image = headerImage || {};
   return (
     <Layout>
@@ -20,7 +20,7 @@ const LoanPagesTemplate = ({ data, location }) => {
       <Section>
         <Container>
           <Box width={[1, 2 / 3, 2 / 3]} p={3}>
-            <div dangerouslySetInnerHTML={{ __html: body }} />
+            <div dangerouslySetInnerHTML={{ __html: content }} />
           </Box>
           <Box as="aside" width={[1, 1 / 3, 1 / 3]} p={3}>
             Something here in the sidebar
@@ -38,7 +38,7 @@ export const query = graphql`
     datoCmsPage(slug: { eq: $slug }) {
       title
       subtitle
-      body
+      content
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
