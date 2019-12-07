@@ -42,13 +42,6 @@ exports.createPages = ({ graphql, actions }, themeOptions) => {
             }
           }
         }
-        allComponentMetadata {
-          edges {
-            node {
-              displayName
-            }
-          }
-        }
       }
     `).then(result => {
       result.data.allDatoCmsPage.edges.map(({ node }) => {
@@ -70,15 +63,7 @@ exports.createPages = ({ graphql, actions }, themeOptions) => {
           }
         });
       });
-      result.data.allComponentMetadata.edges.map(({ node }) => {
-        createPage({
-          path: `docs/${node.displayName}/`,
-          component: require.resolve("./src/templates/docs.js"),
-          context: {
-            name: node.displayName
-          }
-        });
-      });
+
       resolve();
     });
   });

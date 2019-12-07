@@ -36,7 +36,7 @@ module.exports = themeOptions => {
       image: image || ""
     },
     plugins: [
-      "gatsby-transformer-react-docgen",
+      // "gatsby-transformer-react-docgen",
       "gatsby-plugin-styled-components",
 
       {

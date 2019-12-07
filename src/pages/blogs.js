@@ -1,11 +1,9 @@
-import React from "react";
 import { graphql } from "gatsby";
-
-import Layout from "../components/ui/Layout";
-import Header from "../components/ui/Header";
-import Section from "../components/ui/Section";
+import React from "react";
 import Container from "../components/ui/Container";
-import ArticleCard from "../components/ui/ArticleCard";
+import Header from "../components/ui/Header";
+import Layout from "../components/ui/Layout";
+import Section from "../components/ui/Section";
 
 const BlogIndex = ({ data }) => {
   return (
@@ -13,19 +11,7 @@ const BlogIndex = ({ data }) => {
       <Header title="Guides" subTitle="All the blog/guides will show here" />
       <Section bg="lightGrey">
         <Container>
-          {data.allDatoCmsBlog.edges.map(({ node }) => {
-            const image = node.featuredMedia || {};
-
-            return (
-              <ArticleCard
-                width={300}
-                slug={`/blog/${node.slug}`}
-                title={node.title}
-                category={node.category.title}
-                image={image}
-              />
-            );
-          }) || null}
+          <p>Test</p>
         </Container>
       </Section>
     </Layout>

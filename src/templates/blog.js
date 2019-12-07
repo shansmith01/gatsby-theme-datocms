@@ -36,8 +36,6 @@ const BlogPagesTemplate = ({ data }) => {
     date
   } = data.datoCmsArticle;
 
-  console.log(featuredMedia);
-
   return (
     <Layout>
       <Nav />
